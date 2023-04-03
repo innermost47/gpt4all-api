@@ -1,3 +1,5 @@
+PROJECT_DIR := $(shell pwd)
+
 ifndef UNAME_S
 UNAME_S := $(shell uname -s)
 endif
@@ -32,7 +34,10 @@ endif
 
 CFLAGS   = -I.              -O3 -DNDEBUG -std=c11   -fPIC
 CXXFLAGS = -I. -I./examples -O3 -DNDEBUG -std=c++11 -fPIC
-LDFLAGS  =
+CXXFLAGS += -I$(PROJECT_DIR)/json/include -std=c++11
+CXXFLAGS += -I$(PROJECT_DIR)/cpp-httplib -std=c++14
+CXXFLAGS += -I$(PROJECT_DIR)/jwt-cpp/include -std=c++17
+LDFLAGS  = -lcurl -lmysqlcppconn -lcrypto -lsodium
 
 # OS specific
 # TODO: support Windows
