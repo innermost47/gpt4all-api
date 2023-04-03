@@ -114,6 +114,11 @@ add_executable(quantize
     utils.cpp
     utils.h)
 
+add_executable(add_users 
+    add_users.cpp 
+    utils.cpp 
+    utils.h)
+
 add_library(ggml
     ggml.c
     ggml.h)

@@ -47,9 +47,14 @@
 
     <div id="main-container" style="display: none">
       <div class="container mt-3">
-        <h1 class="mb-4">
-          <img src="logo.svg" alt="logo" class="logo" /> AlpacaLLama
-        </h1>
+        <div class="d-flex flex-row justify-content-between align-items-center">
+          <h1 class="mb-4">
+            <img src="logo.svg" alt="logo" class="logo" /> Gpt4All
+          </h1>
+          <div>
+            <div id="logout-button" class="btn btn-secondary">Log-out</div>
+          </div>
+        </div>
         <form id="gpt-form">
           <div class="row">
             <div class="col-md-2">
@@ -95,9 +100,6 @@
                     value="60"
                     required
                   />
-                </div>
-                <div>
-                  <div id="logout-button" class="btn btn-secondary">Logout</div>
                 </div>
               </div>
             </div>

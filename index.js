@@ -26,7 +26,6 @@ function displayChatMessage(message, className, link = null) {
     sourceLink.href = link.url;
     sourceLink.target = "_blank";
     sourceLink.innerText = " " + link.source;
-    sourceLink.classList.add("text-light");
     chatMessageElement.appendChild(br);
     chatMessageElement.appendChild(sourceLink);
   }
@@ -94,6 +93,7 @@ document
         } else {
           document.getElementById("submit").classList.remove("d-none");
           document.getElementById("spinner").classList.add("d-none");
+          document.getElementById("user-input").value = "";
           if (web) {
             displayChatMessage(data.response, "response-message", {
               url: data.url,

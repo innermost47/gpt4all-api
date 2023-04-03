@@ -996,6 +996,7 @@ std::tuple<std::string, std::string, std::string> process_input(std::string &use
             fflush(stdout);
         }
     }
+    printf("\n");
     return std::make_tuple(response, abstractSource, abstractURL);
 }
 

@@ -181,7 +181,7 @@ $(info I CC:       $(CCV))
 $(info I CXX:      $(CXXV))
 $(info )
 
-default: chat quantize
+default: chat quantize add_users
 
 #
 # Build library
@@ -194,10 +194,13 @@ utils.o: utils.cpp utils.h
 	$(CXX) $(CXXFLAGS) -c utils.cpp -o utils.o
 
 clean:
-	rm -f *.o main quantize
+	rm -f *.o main quantize chat add_users
 
 chat: chat.cpp ggml.o utils.o
 	$(CXX) $(CXXFLAGS) chat.cpp ggml.o utils.o -o chat $(LDFLAGS)
+
+add_users: add_users.cpp utils.o
+	$(CXX) $(CXXFLAGS) -o add_users add_users.cpp utils.o $(LDFLAGS)
 
 chat_mac: chat.cpp ggml.c utils.cpp
 	$(CC)  $(CFLAGS)   -c ggml.c -o ggml_x86.o -target x86_64-apple-macos
