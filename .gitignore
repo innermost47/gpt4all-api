@@ -1,4 +1,5 @@
 /chat
+/add_users
 
 *.o
 *.a
